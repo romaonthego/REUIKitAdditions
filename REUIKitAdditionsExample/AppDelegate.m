@@ -18,15 +18,13 @@
     UIViewController *controller = [[UIViewController alloc] init];
     
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectNull];
-    view.x = 10;
-    view.y = 20;
-    view.width = 100;
-    view.height = 110;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 120, 100, 100)];
+    view.x -= 5;
+    view.height += 10;
     view.backgroundColor = [UIColor redColor];
     [controller.view addSubview:view];
     
-    [view addSubview:[UIImageView imageViewWithImageNamed:@"test" x:10 y:15]];
+    [controller.view addSubview:[UIImageView imageViewWithImageNamed:@"image.jpg" x:0 y:0]];
     
     self.window.rootViewController = controller;
     // Override point for customization after application launch.
