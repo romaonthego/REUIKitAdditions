@@ -37,4 +37,6 @@
 - (void)setWidth:(CGFloat)width;
 - (void)setHeight:(CGFloat)height;
 
+- (void)removeAllSubviews;
+
 @end
