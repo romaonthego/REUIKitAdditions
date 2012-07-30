@@ -37,6 +37,7 @@
 		30A9D61215BF823E00167A6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30A9D61315BF823E00167A6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		30A9D61515BF823E00167A6C /* REUIKitAdditionsExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = REUIKitAdditionsExample.entitlements; sourceTree = "<group>"; };
+		30CF861615C711C9009C6C41 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				305BE82C15BF881500FB0558 /* REUIKitAdditions.h */,
+				30CF861615C711C9009C6C41 /* Macros.h */,
 				305BE82D15BF881500FB0558 /* UIImageView+REUIKitAdditions.h */,
 				305BE82E15BF881500FB0558 /* UIImageView+REUIKitAdditions.m */,
 				305BE82F15BF881500FB0558 /* UIView+REUIKitAdditions.h */,
