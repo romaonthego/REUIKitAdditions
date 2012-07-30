@@ -1,5 +1,5 @@
 //
-// REUIKitAdditions.h
+// UIColor+REUIKitAdditions.h
 // REUIKitAdditions
 //
 // Copyright (c) 2012 Roman Efimov (https://github.com/romaonthego)
@@ -23,8 +23,11 @@
 // THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import "UIView+REUIKitAdditions.h"
-#import "UIImageView+REUIKitAdditions.h"
-#import "UIColor+REUIKitAdditions.h"
-#import "Macros.h"
+#import <UIKit/UIKit.h>
+
+@interface UIColor (REUIKitAdditions)
+
++ (UIColor *)colorWithRGBHex:(UInt32)hex;
++ (UIColor *)colorWithRGBHex:(UInt32)hex alpha:(CGFloat)alpha;
+
+@end
