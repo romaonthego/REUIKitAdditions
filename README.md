@@ -26,3 +26,23 @@ Managing the View Hierarchy
 ```objective-c
 - (void)removeAllSubviews;
 ```
+
+## UIImageView
+
+Initializing a UIImageView Object
+
+```objective-c
++ (id)imageViewWithImage:(UIImage *)image position:(CGPoint)position;
++ (id)imageViewWithImage:(UIImage *)image x:(CGFloat)x y:(CGFloat)y;
++ (id)imageViewWithImageNamed:(NSString *)imageName position:(CGPoint)position;
++ (id)imageViewWithImageNamed:(NSString *)imageName x:(CGFloat)x y:(CGFloat)y;
+```
+
+## UIColor
+
+Creating a UIColor Object from Component Values
+
+```objective-c
++ (UIColor *)colorWithRGBHex:(UInt32)hex;
++ (UIColor *)colorWithRGBHex:(UInt32)hex alpha:(CGFloat)alpha;
+```
