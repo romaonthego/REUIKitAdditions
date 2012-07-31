@@ -51,10 +51,12 @@ Creating a UIColor Object from Component Values
 
 ## Macros
 
-`RGB(rgbValue)
+```objective-c
+RGB(rgbValue)
 RGBA(rgbValue, a)
 RGB2(r, g, b)
-RGBA2(r, g, b, a)`
+RGBA2(r, g, b, a)
+`
 
 ## Contact
 
@@ -65,7 +67,7 @@ Roman Efimov
 
 ## License
 
-REPhotoCollectionController is available under the MIT license.
+REUIKitAdditions is available under the MIT license.
 
 Copyright © 2012 Roman Efimov.
 
