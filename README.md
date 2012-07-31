@@ -56,7 +56,7 @@ RGB(rgbValue)
 RGBA(rgbValue, a)
 RGB2(r, g, b)
 RGBA2(r, g, b, a)
-`
+```
 
 ## Contact
 
