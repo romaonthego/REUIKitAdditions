@@ -27,6 +27,16 @@
 
 @implementation UIView (REUIKitAdditions)
 
++ (void)animateWithDuration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations
+{
+    [UIView animateWithDuration:duration delay:0 options:options animations:animations completion:nil];
+}
+
++ (void)animateWithDuration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion
+{
+    [UIView animateWithDuration:duration delay:0 options:options animations:animations completion:completion];
+}
+
 #pragma mark -
 #pragma mark Easy frame access
 

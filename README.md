@@ -14,6 +14,13 @@ If you are not using ARC in your project, add `-fobjc-arc` as a compiler flag fo
 
 ### UIView
 
+Animating Views with Blocks
+
+```objective-c
++ (void)animateWithDuration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations;
++ (void)animateWithDuration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
+```
+
 Configuring the Bounds and Frame Rectangles
 
 ```objective-c

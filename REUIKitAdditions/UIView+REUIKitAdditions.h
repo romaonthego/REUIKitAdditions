@@ -32,6 +32,8 @@
 @property (nonatomic, readwrite) CGFloat width;
 @property (nonatomic, readwrite) CGFloat height;
 
++ (void)animateWithDuration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations;
++ (void)animateWithDuration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
 - (void)removeAllSubviews;
 
 @end
