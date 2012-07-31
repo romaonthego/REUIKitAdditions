@@ -27,15 +27,10 @@
 
 @interface UIView (REUIKitAdditions)
 
-- (CGFloat)x;
-- (CGFloat)y;
-- (CGFloat)width;
-- (CGFloat)height;
-
-- (void)setX:(CGFloat)x;
-- (void)setY:(CGFloat)y;
-- (void)setWidth:(CGFloat)width;
-- (void)setHeight:(CGFloat)height;
+@property (nonatomic, readwrite) CGFloat x;
+@property (nonatomic, readwrite) CGFloat y;
+@property (nonatomic, readwrite) CGFloat width;
+@property (nonatomic, readwrite) CGFloat height;
 
 - (void)removeAllSubviews;
 
