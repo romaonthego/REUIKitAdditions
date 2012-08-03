@@ -40,8 +40,6 @@ static char blockAction;
     objc_setAssociatedObject(self, &blockAction, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-//- (void)setBl
-
 - (void)setBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event
 {
     self.blockAction = [block copy];
