@@ -1,5 +1,5 @@
 //
-// REUIKitAdditions.h
+// UIControl+REUIKitAdditions.m
 // REUIKitAdditions
 //
 // Copyright (c) 2012 Roman Efimov (https://github.com/romaonthego)
@@ -23,10 +23,21 @@
 // THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import "NSObject+REUIKitAdditions.h"
-#import "UIView+REUIKitAdditions.h"
-#import "UIImageView+REUIKitAdditions.h"
-#import "UIColor+REUIKitAdditions.h"
 #import "UIControl+REUIKitAdditions.h"
-#import "Macros.h"
+
+@implementation UIControl (REUIKitAdditions)
+
+static void (^_block)();
+
+- (void)addBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event
+{
+	_block = [block copy];
+	[self addTarget:self action:@selector(callActionBlock:) forControlEvents:event];
+}
+
+- (void)callActionBlock:(id)sender
+{
+	_block();
+}
+
+@end

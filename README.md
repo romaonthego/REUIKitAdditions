@@ -64,6 +64,14 @@ Creating a UIColor Object from Component Values
 + (UIColor *)colorWithRGBHex:(UInt32)hex alpha:(CGFloat)alpha;
 ```
 
+### UIControl
+
+Preparing and Sending Action Messages
+
+```objective-c
+- (void)addBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event;
+```
+
 ## Macros
 
 ```objective-c
