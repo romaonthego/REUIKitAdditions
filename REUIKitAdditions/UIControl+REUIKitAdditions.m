@@ -26,15 +26,6 @@
 #import "UIControl+REUIKitAdditions.h"
 #import <objc/runtime.h>
 
-@interface UIControl() {
-  //  NSDictionary *_blockActions;
-}
-
-//@property (nonatomic, readonly) NSDictionary *blockActions;
-//@property (nonatomic, readwrite) void (^_block)();
-
-@end
-
 static char blockAction;
 
 @implementation UIControl (REUIKitAdditions)
