@@ -12,6 +12,14 @@ If you are not using ARC in your project, add `-fobjc-arc` as a compiler flag fo
 
 ## Additions
 
+### NSObject
+
+Sending Messages
+
+```objective-c
+- (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
+```
+
 ### UIView
 
 Animating Views with Blocks

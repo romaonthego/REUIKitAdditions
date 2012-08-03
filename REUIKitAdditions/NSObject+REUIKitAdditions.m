@@ -1,5 +1,5 @@
 //
-// REUIKitAdditions.h
+// NSObject+REUIKitAdditions.m
 // REUIKitAdditions
 //
 // Copyright (c) 2012 Roman Efimov (https://github.com/romaonthego)
@@ -23,9 +23,20 @@
 // THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
 #import "NSObject+REUIKitAdditions.h"
-#import "UIView+REUIKitAdditions.h"
-#import "UIImageView+REUIKitAdditions.h"
-#import "UIColor+REUIKitAdditions.h"
-#import "Macros.h"
+
+@implementation NSObject (REUIKitAdditions)
+
+- (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay
+{
+    block = [block copy];
+    [self performSelector:@selector(runBlockAfterDelay:) withObject:block afterDelay:delay];
+}
+
+- (void)runBlockAfterDelay:(void (^)(void))block
+{
+	if (block != nil)
+		block();
+}
+
+@end

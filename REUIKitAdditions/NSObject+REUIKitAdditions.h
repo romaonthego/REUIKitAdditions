@@ -1,5 +1,5 @@
 //
-// REUIKitAdditions.h
+// NSObject+REUIKitAdditions.h
 // REUIKitAdditions
 //
 // Copyright (c) 2012 Roman Efimov (https://github.com/romaonthego)
@@ -24,8 +24,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject+REUIKitAdditions.h"
-#import "UIView+REUIKitAdditions.h"
-#import "UIImageView+REUIKitAdditions.h"
-#import "UIColor+REUIKitAdditions.h"
-#import "Macros.h"
+
+@interface NSObject (REUIKitAdditions)
+
+- (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
+
+@end
