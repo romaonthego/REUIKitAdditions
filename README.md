@@ -69,7 +69,7 @@ Creating a UIColor Object from Component Values
 Preparing and Sending Action Messages
 
 ```objective-c
-- (void)addBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event;
+- (void)setBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event;
 ```
 
 ## Macros

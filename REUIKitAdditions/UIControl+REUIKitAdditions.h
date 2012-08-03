@@ -27,6 +27,8 @@
 
 @interface UIControl (REUIKitAdditions)
 
-- (void)addBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event;
+@property (nonatomic, strong) void (^blockAction)(void);
+
+- (void)setBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event;
 
 @end

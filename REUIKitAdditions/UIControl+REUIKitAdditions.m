@@ -24,20 +24,44 @@
 //
 
 #import "UIControl+REUIKitAdditions.h"
+#import <objc/runtime.h>
+
+@interface UIControl() {
+  //  NSDictionary *_blockActions;
+}
+
+//@property (nonatomic, readonly) NSDictionary *blockActions;
+//@property (nonatomic, readwrite) void (^_block)();
+
+@end
+
+static char blockAction;
 
 @implementation UIControl (REUIKitAdditions)
 
-static void (^_block)();
-
-- (void)addBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event
+- (void (^)(void))blockAction
 {
-	_block = [block copy];
-	[self addTarget:self action:@selector(callActionBlock:) forControlEvents:event];
+    return objc_getAssociatedObject(self, &blockAction);
+}
+
+- (void)setBlockAction:(void (^)(void))block
+{
+    objc_setAssociatedObject(self, &blockAction, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+//- (void)setBl
+
+- (void)setBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event
+{
+    self.blockAction = [block copy];
+    [self addTarget:self action:@selector(callActionBlock:) forControlEvents:event];
 }
 
 - (void)callActionBlock:(id)sender
 {
-	_block();
+	if (self.blockAction) {
+        self.blockAction();
+    }
 }
 
 @end
