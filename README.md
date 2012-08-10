@@ -44,6 +44,14 @@ Managing the View Hierarchy
 - (void)removeAllSubviews;
 ```
 
+### UIImage
+
+Image Loading Routines
+
+```objective-c
++ (UIImage *)maskedImageNamed:(NSString *)name color:(UIColor *)color;
+```
+
 ### UIImageView
 
 Initializing a UIImageView Object
