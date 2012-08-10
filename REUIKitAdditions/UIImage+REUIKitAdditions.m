@@ -1,5 +1,5 @@
 //
-// REUIKitAdditions.h
+// UIImage+REUIKitAdditions.m
 // REUIKitAdditions
 //
 // Copyright (c) 2012 Roman Efimov (https://github.com/romaonthego)
@@ -23,11 +23,23 @@
 // THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import "NSObject+REUIKitAdditions.h"
-#import "UIView+REUIKitAdditions.h"
 #import "UIImage+REUIKitAdditions.h"
-#import "UIImageView+REUIKitAdditions.h"
-#import "UIColor+REUIKitAdditions.h"
-#import "UIControl+REUIKitAdditions.h"
-#import "Macros.h"
+
+@implementation UIImage (REUIKitAdditions)
+
++ (UIImage *)maskedImageNamed:(NSString *)name color:(UIColor *)color
+{
+	UIImage *image = [UIImage imageNamed:name];
+	CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
+	UIGraphicsBeginImageContextWithOptions(rect.size, NO, image.scale);
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	[image drawInRect:rect];
+	CGContextSetFillColorWithColor(context, [color CGColor]);
+	CGContextSetBlendMode(context, kCGBlendModeSourceAtop);
+	CGContextFillRect(context, rect);
+	UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return result;
+}
+
+@end
