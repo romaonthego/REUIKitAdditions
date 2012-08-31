@@ -45,7 +45,7 @@
 // Modified code from:
 // http://www.gotow.net/creative/wordpress/?p=7
 //
-CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size)
+CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size, BOOL zoomIn)
 {
     // Create the bitmap context
     CGContextRef    context = NULL;
@@ -56,14 +56,11 @@ CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size)
     int imageWidth = CGImageGetWidth(image);
     int imageHeight = CGImageGetHeight(image);
     
-    float biggestNumber = MAX(imageWidth, imageHeight);
+    float biggestNumber = zoomIn ? MIN(imageWidth, imageHeight) : MAX(imageWidth, imageHeight);
     float coef = size / biggestNumber;
     
     imageWidth = imageWidth * coef;
     imageHeight = imageHeight * coef;
-    
-    int width = imageWidth >= size ? size : imageWidth;
-    int height = imageHeight >= size ? size : imageHeight;
     
     // Declare the number of bytes per row. Each pixel in the bitmap in this
     // example is represented by 4 bytes; 8 bits each of red, green, blue, and
@@ -96,7 +93,7 @@ CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size)
     // raw image data in the specified color space.
     CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
     
-    CGContextDrawImage(context, CGRectMake((size - imageWidth) / 2, (size - imageHeight) / 2, width, height), image);
+    CGContextDrawImage(context, CGRectMake((size - imageWidth) / 2, (size - imageHeight) / 2, imageWidth, imageHeight), image);
     
     CGImageRef imgRef = CGBitmapContextCreateImage(context);
     CGContextRelease(context);
@@ -107,12 +104,17 @@ CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size)
 
 + (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size
 {
-    return [UIImage imageWithCGImage:CreateSquareCGImageFromCGImage(image.CGImage, size) scale:image.scale orientation:image.imageOrientation];
+    return [UIImage imageWithCGImage:CreateSquareCGImageFromCGImage(image.CGImage, size, NO) scale:image.scale orientation:image.imageOrientation];
 }
 
 + (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size scale:(CGFloat)scale
 {
-    return [UIImage imageWithCGImage:CreateSquareCGImageFromCGImage(image.CGImage, size) scale:scale orientation:image.imageOrientation];
+    return [UIImage imageWithCGImage:CreateSquareCGImageFromCGImage(image.CGImage, size, NO) scale:scale orientation:image.imageOrientation];
+}
+
++ (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size scale:(CGFloat)scale zoomIn:(BOOL)zoomIn
+{
+    return [UIImage imageWithCGImage:CreateSquareCGImageFromCGImage(image.CGImage, size, zoomIn) scale:scale orientation:image.imageOrientation];
 }
 
 @end
