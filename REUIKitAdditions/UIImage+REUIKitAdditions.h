@@ -28,5 +28,6 @@
 @interface UIImage (REUIKitAdditions)
 
 + (UIImage *)maskedImageNamed:(NSString *)name color:(UIColor *)color;
++ (UIImage *)squareImageWithImage:(UIImage *)image size:(int)size;
 
 @end
