@@ -50,7 +50,7 @@ Image Loading Routines
 
 ```objective-c
 + (UIImage *)maskedImageNamed:(NSString *)name color:(UIColor *)color;
-+ (UIImage *)squareImageWithImage:(UIImage *)image size:(int)size;
++ (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size;
 ```
 
 ### UIImageView
