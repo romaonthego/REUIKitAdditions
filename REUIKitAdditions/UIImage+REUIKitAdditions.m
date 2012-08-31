@@ -62,6 +62,9 @@ CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size, BOOL zoomI
     imageWidth = imageWidth * coef;
     imageHeight = imageHeight * coef;
     
+    int width = zoomIn ? imageWidth : (imageWidth >= size ? size : imageWidth);
+    int height = zoomIn ? imageHeight : (imageHeight >= size ? size : imageHeight);
+    
     // Declare the number of bytes per row. Each pixel in the bitmap in this
     // example is represented by 4 bytes; 8 bits each of red, green, blue, and
     // alpha.
@@ -93,7 +96,7 @@ CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size, BOOL zoomI
     // raw image data in the specified color space.
     CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
     
-    CGContextDrawImage(context, CGRectMake((size - imageWidth) / 2, (size - imageHeight) / 2, imageWidth, imageHeight), image);
+    CGContextDrawImage(context, CGRectMake((size - imageWidth) / 2, (size - imageHeight) / 2, width, height), image);
     
     CGImageRef imgRef = CGBitmapContextCreateImage(context);
     CGContextRelease(context);
