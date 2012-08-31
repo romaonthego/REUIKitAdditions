@@ -105,12 +105,12 @@ CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size)
     return imgRef;
 }
 
-+ (UIImage *)squareImageWithImage:(UIImage *)image size:(int)size
++ (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size
 {
     return [UIImage imageWithCGImage:CreateSquareCGImageFromCGImage(image.CGImage, size) scale:image.scale orientation:image.imageOrientation];
 }
 
-+ (UIImage *)squareImageWithImage:(UIImage *)image size:(int)size scale:(CGFloat)scale
++ (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size scale:(CGFloat)scale
 {
     return [UIImage imageWithCGImage:CreateSquareCGImageFromCGImage(image.CGImage, size) scale:scale orientation:image.imageOrientation];
 }

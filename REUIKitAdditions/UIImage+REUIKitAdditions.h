@@ -29,6 +29,6 @@
 
 + (UIImage *)maskedImageNamed:(NSString *)name color:(UIColor *)color;
 + (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size;
-+ (UIImage *)squareImageWithImage:(UIImage *)image size:(int)size scale:(CGFloat)scale;
++ (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size scale:(CGFloat)scale;
 
 @end
