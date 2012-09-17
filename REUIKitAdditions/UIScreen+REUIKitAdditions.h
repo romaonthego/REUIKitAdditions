@@ -1,5 +1,5 @@
 //
-// REUIKitAdditions.h
+// UIScreen+REUIKitAdditions.h
 // REUIKitAdditions
 //
 // Copyright (c) 2012 Roman Efimov (https://github.com/romaonthego)
@@ -23,11 +23,10 @@
 // THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import "NSObject+REUIKitAdditions.h"
-#import "UIView+REUIKitAdditions.h"
-#import "UIImage+REUIKitAdditions.h"
-#import "UIImageView+REUIKitAdditions.h"
-#import "UIColor+REUIKitAdditions.h"
-#import "UIControl+REUIKitAdditions.h"
-#import "UIScreen+REUIKitAdditions.h"
+#import <UIKit/UIKit.h>
+
+@interface UIScreen (REUIKitAdditions)
+
+- (BOOL)isRetina4;
+
+@end

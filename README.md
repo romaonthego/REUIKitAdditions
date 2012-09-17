@@ -83,6 +83,15 @@ Preparing and Sending Action Messages
 - (void)setBlock:(void (^)(void))block forControlEvents:(UIControlEvents)event;
 ```
 
+### UIScreen
+
+Getting the Bounds Information
+
+```objective-c
+- (BOOL)isRetina4;
+```
+
+
 ## Macros
 
 ```objective-c
