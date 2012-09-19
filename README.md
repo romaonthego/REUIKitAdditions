@@ -49,6 +49,7 @@ Managing the View Hierarchy
 Image Loading Routines
 
 ```objective-c
++ (void)swizzleImageNamedToSupportRetina4;
 + (UIImage *)maskedImageNamed:(NSString *)name color:(UIColor *)color;
 + (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size;
 + (UIImage *)squareImageWithImage:(UIImage *)image size:(NSInteger)size scale:(CGFloat)scale;

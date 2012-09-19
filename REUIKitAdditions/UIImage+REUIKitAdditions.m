@@ -31,7 +31,7 @@ static Method origImageNamedMethod = nil;
 
 @implementation UIImage (REUIKitAdditions)
 
-+ (void)initialize
++ (void)swizzleImageNamedToSupportRetina4
 {
     origImageNamedMethod = class_getClassMethod(self, @selector(imageNamed:));
     method_exchangeImplementations(origImageNamedMethod,
