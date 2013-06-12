@@ -109,7 +109,7 @@ CGImageRef CreateSquareCGImageFromCGImage(CGImageRef image, int size, BOOL zoomI
     // specified here by CGBitmapContextCreate.
     CGColorSpaceRef colorspace = CGImageGetColorSpace(image);
     context = CGBitmapContextCreate (bitmapData,size,size,8,bitmapBytesPerRow,
-                                     colorspace,kCGImageAlphaNoneSkipFirst);
+                                     colorspace,(CGBitmapInfo)kCGImageAlphaNoneSkipFirst);
     CGColorSpaceRelease(colorspace);
     
     if (context == NULL)
